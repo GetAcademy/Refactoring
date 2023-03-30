@@ -2,29 +2,33 @@
 {
     internal class Question
     {
-        private string _questionText;
-        private string _correctAnswer;
-        private string[] _options;
+        public string QuestionText { get; set; }
+        public string CorrectAnswer { get; set; }
+        public string[] Options { get; set; }
+
+        public Question()
+        {
+        }
 
         public Question(string questionText, 
             string correctAnswer, 
             params string[] options)
         {
-            _questionText = questionText;
-            _correctAnswer = correctAnswer;
-            _options = options;
+            QuestionText = questionText;
+            CorrectAnswer = correctAnswer;
+            Options = options;
         }
 
         public int Ask()
         {
-            Console.WriteLine(_questionText);
-            for (var index = 0; index < _options.Length; index++)
+            Console.WriteLine(QuestionText);
+            for (var index = 0; index < Options.Length; index++)
             {
                 var letter = (char)('A' + index);
-                var option = _options[index];
+                var option = Options[index];
                 Console.WriteLine($" {letter}: {option}");
             }
-            return CheckAnswer(_correctAnswer);
+            return CheckAnswer(CorrectAnswer);
         }
 
         private static int CheckAnswer(string correctAnswer)

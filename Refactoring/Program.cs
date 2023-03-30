@@ -4,28 +4,22 @@
  * 3: Innføre klasse
  *
  * top down vs bottom up
- * 
+ *
+ * json serialisering og deserialering
+ *
+ * There are only two hard things in Computer Science:
+ *  - cache invalidation,
+ *  - naming things
+ *  - and off-by-one-errors.	
  */
 
 using Refactoring;
 
-var questions = new Question[]
-{
-    new Question("Hva er 2+2?", "c", "2", "3", "4", "5"),
-    new Question("Hvilken by er norsk?", "a", "Oslo", "Ohio"),
-    new Question("Hvilken farge er ikke i den norske flagget?", "b", "Rød", "Grønn", "Blå")
-};
-var points = 0;
-foreach (var question in questions)
-{
-    points += question.Ask();
-}
-Console.WriteLine($"Du fikk {points} riktige.");
-             
+//var quiz = Quiz.MakeQuiz1();
+//var quiz = new Quiz("questions.json");
+//quiz.Run();
 
-
-
-
+WhatDemo.Run();
 
 /*
 var points = Ask("Hva er 2+2?", "c", "2", "3", "4", "5")
